@@ -1,6 +1,7 @@
 """
 Panel Siemens iX - Material-UI theme based on Siemens iX design system
 """
+
 import panel as pn
 import panel_material_ui as pmui
 from pathlib import Path
@@ -29,6 +30,7 @@ FAVICON_PATH = str(Path(__file__).parent / "static/sie-favicon_intranet.ico")
 LOGO_LIGHT_PATH = str(Path(__file__).parent / "static/sie-logo-black-rgb.svg")
 LOGO_DARK_PATH = str(Path(__file__).parent / "static/sie-logo-white-rgb.svg")
 
+
 def _configure_session() -> None:
     """
     Configure Panel session-specific settings.
@@ -46,18 +48,21 @@ def _configure_general() -> None:
     This includes theme configuration, CSS, fonts, logos, and component defaults.
     """
     # Page configuration
-    pmui.Page.param.theme_config.default = dict(light=siemens_ix_light_theme, dark=siemens_ix_dark_theme)
-    # CSS and font configuration
+    pmui.Page.param.theme_config.default = dict(
+        light=siemens_ix_light_theme, dark=siemens_ix_dark_theme
+    )
+    pmui.Page.param.sx.default = {
+        "&.mui-dark .title": {"color": get_colors("dark").text["primary"]},
+        "&.mui-light .title": {"color": get_colors("light").text["primary"]},
+    }
 
     # Brand assets configuration
     pmui.Page.param.logo.default = {"light": LOGO_LIGHT_PATH, "dark": LOGO_DARK_PATH}
     pmui.Page.favicon = FAVICON_PATH
-    #pmui.Page.meta.apple_touch_icon = ""  # Intentionally left empty
-    #pmui.Page.meta.title = "Siemens"
+    # pmui.Page.meta.apple_touch_icon = ""  # Intentionally left empty
 
     # Component-specific configurations
-    #pmui.Button.param.disable_elevation.default = True
-
+    # pmui.Button.param.disable_elevation.default = True
 
 
 def configure() -> None:
