@@ -18,6 +18,7 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
+    "hvplot>=0.11.3",
     "ipython>=9.4.0",
     "jupyter-bokeh>=4.0.5",
     "jupyterlab>=4.4.5",
