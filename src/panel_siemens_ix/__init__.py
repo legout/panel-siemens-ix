@@ -25,9 +25,9 @@ __version__ = "0.1.0"
 _DISCONNECT_NOTIFICATION: str = """The connection to the server was lost. Please refresh to \
 reconnect."""
 
-FAVICON_PATH = Path(__file__).parent / "static/sie-favicon_intranet.png"
-LOGO_LIGHT_PATH = Path(__file__).parent / "static/sie-logo-black-rgb.svg"
-LOGO_DARK_PATH = Path(__file__).parent / "static/sie-logo-white-rgb.svg"
+FAVICON_PATH = str(Path(__file__).parent / "static/sie-favicon_intranet.ico")
+LOGO_LIGHT_PATH = str(Path(__file__).parent / "static/sie-logo-black-rgb.svg")
+LOGO_DARK_PATH = str(Path(__file__).parent / "static/sie-logo-white-rgb.svg")
 
 def _configure_session() -> None:
     """

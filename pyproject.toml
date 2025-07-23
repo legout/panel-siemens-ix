@@ -28,6 +28,7 @@ include = [
 
 [dependency-groups]
 dev = [
+    "ipython>=9.4.0",
     "jupyterlab>=4.4.5",
     "marimo>=0.14.12",
 ]

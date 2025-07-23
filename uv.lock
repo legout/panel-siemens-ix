@@ -1089,6 +1089,7 @@ dependencies = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "ipython" },
     { name = "jupyterlab" },
     { name = "marimo" },
 ]
@@ -1101,6 +1102,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "ipython", specifier = ">=9.4.0" },
     { name = "jupyterlab", specifier = ">=4.4.5" },
     { name = "marimo", specifier = ">=0.14.12" },
 ]

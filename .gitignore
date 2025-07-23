@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+dev/
+#dev/Untitled.ipynb
+#dev/.ipynb_checkpoints/Untitled-checkpoint.ipynb

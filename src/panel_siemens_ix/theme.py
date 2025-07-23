@@ -28,58 +28,57 @@ def create_theme(mode: str = 'light') -> Dict[str, Any]:
     if mode not in ['light', 'dark']:
         raise ValueError("Mode must be either 'light' or 'dark'")
 
-    colors = SiemensIXDarkColors().to_dict() if mode == 'dark' else SiemensIXLightColors().to_dict()
-
+    colors = SiemensIXDarkColors() if mode == 'dark' else SiemensIXLightColors()
     return {
         'palette': {
             'mode': mode,
             'primary': {
-                'main': colors['primary']['main'],
-                'dark': colors['primary']['active'],
-                'light': colors['primary']['hover'],
-                'contrastText': colors['primary']['contrast'],
+                'main': colors.primary['main'],
+                'dark': colors.primary['active'],
+                'light': colors.primary['hover'],
+                'contrastText': colors.primary['contrast'],
             },
             'secondary': {
-                'main': colors['dynamic']['main'],  # Use dynamic color for secondary
-                'dark': colors['dynamic']['active'],
-                'light': colors['dynamic']['hover'],
-                'contrastText': colors['dynamic']['contrast'],
+                'main': colors.dynamic['main'],  # Use dynamic color for secondary
+                'dark': colors.dynamic['active'],
+                'light': colors.dynamic['hover'],
+                'contrastText': colors.dynamic['contrast'],
             },
             'error': {
-                'main': colors['error']['main'],
-                'dark': colors['error']['active'],
-                'light': colors['error']['hover'],
-                'contrastText': colors['error']['contrast'],
+                'main': colors.error['main'],
+                'dark': colors.error['active'],
+                'light': colors.error['hover'],
+                'contrastText': colors.error['contrast'],
             },
             'warning': {
-                'main': colors['warning']['main'],
-                'dark': colors['warning']['active'],
-                'light': colors['warning']['hover'],
-                'contrastText': colors['warning']['contrast'],
+                'main': colors.warning['main'],
+                'dark': colors.warning['active'],
+                'light': colors.warning['hover'],
+                'contrastText': colors.warning['contrast'],
             },
             'info': {
-                'main': colors['info']['main'],
-                'dark': colors['info']['active'],
-                'light': colors['info']['hover'],
-                'contrastText': colors['info']['contrast'],
+                'main': colors.info['main'],
+                'dark': colors.info['active'],
+                'light': colors.info['hover'],
+                'contrastText': colors.info['contrast'],
             },
             'success': {
-                'main': colors['success']['main'],
-                'dark': colors['success']['active'],
-                'light': colors['success']['hover'],
-                'contrastText': colors['success']['contrast'],
+                'main': colors.success['main'],
+                'dark': colors.success['active'],
+                'light': colors.success['hover'],
+                'contrastText': colors.success['contrast'],
             },
             'text': {
-                'primary': colors['text']['primary'],
-                'secondary': colors['text']['secondary'],
-                'disabled': colors['text']['disabled'],
-                'hint': colors['text']['hint'],
+                'primary': colors.text['primary'],
+                'secondary': colors.text['secondary'],
+                'disabled': colors.text['disabled'],
+                'hint': colors.text['hint'],
             },
             'background': {
-                'default': colors['background']['default'],
-                'paper': colors['background']['paper'],
+                'default': colors.background['default'],
+                'paper': colors.background['paper'],
             },
-            'divider': colors['border']['std'],
+            'divider': colors.border['std'],
         },
         'components': {
             'MuiButton': {
@@ -91,27 +90,27 @@ def create_theme(mode: str = 'light') -> Dict[str, Any]:
                     },
                     'containedPrimary': {
                         '&:hover': {
-                            'backgroundColor': colors['primary']['hover'],
+                            'backgroundColor': colors.primary['hover'],
                         },
                         '&:active': {
-                            'backgroundColor': colors['primary']['active'],
+                            'backgroundColor': colors.primary['active'],
                         },
                     },
                     'containedSecondary': {
-                        'backgroundColor': colors['dynamic']['main'],
-                        'color': colors['dynamic']['contrast'],
+                        'backgroundColor': colors.dynamic['main'],
+                        'color': colors.dynamic['contrast'],
                         '&:hover': {
-                            'backgroundColor': colors['dynamic']['hover'],
+                            'backgroundColor': colors.dynamic['hover'],
                         },
                         '&:active': {
-                            'backgroundColor': colors['dynamic']['active'],
+                            'backgroundColor': colors.dynamic['active'],
                         },
                     },
                     'outlined': {
-                        'borderColor': colors['border']['std'],
+                        'borderColor': colors.border['std'],
                         '&:hover': {
-                            'borderColor': colors['dynamic']['main'],
-                            'backgroundColor': _hex_to_rgba(colors['dynamic']['main'], 0.08),
+                            'borderColor': colors.dynamic['main'],
+                            'backgroundColor': _hex_to_rgba(colors.dynamic['main'], 0.08),
                         },
                     },
                 },
@@ -122,17 +121,17 @@ def create_theme(mode: str = 'light') -> Dict[str, Any]:
                         'borderRadius': '16px',
                     },
                     'colorPrimary': {
-                        'backgroundColor': colors['primary']['main'],
-                        'color': colors['primary']['contrast'],
+                        'backgroundColor': colors.primary['main'],
+                        'color': colors.primary['contrast'],
                         '&:hover': {
-                            'backgroundColor': colors['primary']['hover'],
+                            'backgroundColor': colors.primary['hover'],
                         },
                     },
                     'colorSecondary': {
-                        'backgroundColor': colors['secondary']['main'],
-                        'color': colors['secondary']['contrast'],
+                        'backgroundColor': colors.secondary['main'],
+                        'color': colors.secondary['contrast'],
                         '&:hover': {
-                            'backgroundColor': colors['secondary']['hover'],
+                            'backgroundColor': colors.secondary['hover'],
                         },
                     },
                 },
@@ -142,14 +141,14 @@ def create_theme(mode: str = 'light') -> Dict[str, Any]:
                     'root': {
                         '& .MuiOutlinedInput-root': {
                             '&:hover .MuiOutlinedInput-notchedOutline': {
-                                'borderColor': colors['dynamic']['main'],
+                                'borderColor': colors.dynamic['main'],
                             },
                             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                'borderColor': colors['dynamic']['main'],
+                                'borderColor': colors.dynamic['main'],
                                 'borderWidth': '2px',
                             },
                             '& fieldset': {
-                                'borderColor': colors['border']['std'],
+                                'borderColor': colors.border['std'],
                             },
                         },
                     },
@@ -158,15 +157,24 @@ def create_theme(mode: str = 'light') -> Dict[str, Any]:
             'MuiPaper': {
                 'styleOverrides': {
                     'root': {
-                        'backgroundColor': colors['background']['paper'],
+                        'backgroundColor': colors.background['paper'],
                     },
                 },
             },
+            "MuiButtonBase": {
+                "defaultProps": {
+                    "disableRipple": True,
+                },
+            },
             'MuiAppBar': {
+                'defaultProps': {
+                    'enableColorOnDark': True,
+                    'color': 'primary'
+                },
                 'styleOverrides': {
                     'root': {
-                        'backgroundColor': colors['background']['surface'],
-                        'color': colors['text']['primary'],
+                        'backgroundColor': colors.background['surface'],
+                        'color': colors.text['primary'],
                         
                     },
                 },
