@@ -1,6 +1,6 @@
 # panel-siemens-ix
 
-A Siemens Industrial Experience (iX) compliant theme library for [`panel-material-ui`](https://panel-material-ui.readthedocs.io/).
+A Siemens Industrial Experience (iX) compliant theme library for [`panel-material-ui`](https://panel-material-ui.holoviz.org/).
 
 ## Screenshots
 
