@@ -16,23 +16,14 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-#[tool.hatch.build.targets.sdist]
-#include = [
-#    "src/panel_siemens_ix/static/**"
-#]
-
-#[tool.hatch.build.targets.wheel]
-#include = [
-#    "src/panel_siemens_ix/static/**"
-#]
-
-[tool.uv.sources]
-panel-material-ui = { git = "https://github.com/panel-extensions/panel-material-ui", branch = "page_theme_logo" }
-
 [dependency-groups]
 dev = [
     "ipython>=9.4.0",
+    "jupyter-bokeh>=4.0.5",
     "jupyterlab>=4.4.5",
     "marimo>=0.14.12",
     "svgutils>=0.3.4",
 ]
+
+[tool.uv.sources]
+panel-material-ui = { git = "https://github.com/panel-extensions/panel-material-ui" }

@@ -54,6 +54,7 @@ def _configure_general() -> None:
     pmui.Page.param.sx.default = {
         "&.mui-dark .title": {"color": get_colors("dark").text["primary"]},
         "&.mui-light .title": {"color": get_colors("light").text["primary"]},
+        "& .title": {"fontSize": "1.1em", "fontStyle":"normal"}
     }
 
     # Brand assets configuration
