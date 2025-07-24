@@ -41,7 +41,7 @@ def _configure_session() -> None:
 
 
 @pn.cache
-def _configure_general() -> None:
+def _configure_general(with_logo: bool = True) -> None:
     """
     Configure general theme settings for Panel Material UI components.
 
@@ -54,11 +54,14 @@ def _configure_general() -> None:
     pmui.Page.param.sx.default = {
         "&.mui-dark .title": {"color": get_colors("dark").text["primary"]},
         "&.mui-light .title": {"color": get_colors("light").text["primary"]},
-        "& .title": {"fontSize": "1.1em", "fontStyle":"normal"}
+        "& .title": {"fontSize": "1.em", "fontWeight":550}
     }
 
     # Brand assets configuration
-    pmui.Page.param.logo.default = {"light": LOGO_LIGHT_PATH, "dark": LOGO_DARK_PATH}
+    if with_logo:
+        pmui.Page.param.logo.default = {"light": LOGO_LIGHT_PATH, "dark": LOGO_DARK_PATH}
+    else:
+        pmui.Page.param.logo.default = None
     pmui.Page.favicon = FAVICON_PATH
     # pmui.Page.meta.apple_touch_icon = ""  # Intentionally left empty
 
@@ -66,7 +69,7 @@ def _configure_general() -> None:
     # pmui.Button.param.disable_elevation.default = True
 
 
-def configure() -> None:
+def configure(with_logo: bool = True) -> None:
     """
     Configure the complete theme for the application.
 
@@ -79,7 +82,7 @@ def configure() -> None:
     >>> configure()
     >>> app = pmui.Page(title="My Orbitron App")
     """
-    _configure_general()
+    _configure_general(with_logo=with_logo)
     _configure_session()
 
 

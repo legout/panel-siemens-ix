@@ -9,7 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "panel>=1.7.4",
-    "panel-material-ui",
+    "panel-material-ui>=0.3.3",
 ]
 
 [build-system]
@@ -25,6 +25,3 @@ dev = [
     "marimo>=0.14.12",
     "svgutils>=0.3.4",
 ]
-
-[tool.uv.sources]
-panel-material-ui = { git = "https://github.com/panel-extensions/panel-material-ui" }

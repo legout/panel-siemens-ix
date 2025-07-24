@@ -1176,11 +1176,15 @@ wheels = [
 [[package]]
 name = "panel-material-ui"
 version = "0.3.3"
-source = { git = "https://github.com/panel-extensions/panel-material-ui#cffec78228fc469fafdb429ae2dec1f43733ac21" }
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bokeh" },
     { name = "packaging" },
     { name = "panel" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/93/6a/90ce2d29df65f6bfef574f34a5da84c3e7f15b8a0465f64ea8d87d9f1430/panel_material_ui-0.3.3.tar.gz", hash = "sha256:63b5fc6f1d9e271437a51e1570e83ff641d73256aa7d8decfb820c5565257b19", size = 2347076 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/31/40/66275bda83ec61e9cbc82535582a87de278c3ec448b5ec90a3ed4b89935f/panel_material_ui-0.3.3-py3-none-any.whl", hash = "sha256:16c5da361a72ade28b02f4e60fe511d5ad5501907e64d8c96726024dacda3813", size = 1549770 },
 ]
 
 [[package]]
@@ -1205,7 +1209,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "panel", specifier = ">=1.7.4" },
-    { name = "panel-material-ui", git = "https://github.com/panel-extensions/panel-material-ui" },
+    { name = "panel-material-ui", specifier = ">=0.3.3" },
 ]
 
 [package.metadata.requires-dev]

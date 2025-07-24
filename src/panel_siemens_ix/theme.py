@@ -180,46 +180,46 @@ def create_theme(mode: str = "light") -> Dict[str, Any]:
             "fontFamily": '"Siemens Sans", "Arial", sans-serif',
             "h1": {
                 "fontWeight": 600,
-                "fontSize": "2.5rem",
+                "fontSize": "2.25rem",
                 "lineHeight": 1.2,
             },
             "h2": {
                 "fontWeight": 600,
-                "fontSize": "2rem",
+                "fontSize": "1.75rem",
                 "lineHeight": 1.3,
             },
             "h3": {
                 "fontWeight": 600,
-                "fontSize": "1.75rem",
+                "fontSize": "1.5rem",
                 "lineHeight": 1.4,
             },
             "h4": {
                 "fontWeight": 600,
-                "fontSize": "1.5rem",
+                "fontSize": "1.25rem",
                 "lineHeight": 1.4,
             },
             "h5": {
                 "fontWeight": 600,
-                "fontSize": "1.25rem",
+                "fontSize": "1.125rem",
                 "lineHeight": 1.5,
             },
             "h6": {
                 "fontWeight": 600,
-                "fontSize": "1.125rem",
+                "fontSize": "1.0rem",
                 "lineHeight": 1.5,
             },
             "body1": {
-                "fontSize": "1rem",
+                "fontSize": "0.875rem",
                 "lineHeight": 1.5,
             },
             "body2": {
-                "fontSize": "0.875rem",
+                "fontSize": "0.75rem",
                 "lineHeight": 1.43,
             },
             "button": {
-                "fontWeight": 500,
+                "fontWeight": 600,
                 "textTransform": "none",
-                "fontSize": "0.875rem",
+                "fontSize": "1rem",
                 "lineHeight": 1.75,
             },
             "caption": {
