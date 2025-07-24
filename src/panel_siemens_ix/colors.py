@@ -140,6 +140,43 @@ class SiemensIXDarkColors:
         '3': '#00000099',
     })
 
+    chart: Dict[str, str] = field(default_factory=lambda: {
+        '1': '#00ffb9',
+        '1-40': '#00ffb966',
+        '2': '#85E9D2',
+        '2-40': '#85E9D266',
+        '3': '#00C1B6',
+        '3-40': '#00C1B666',
+        '4': '#CCF5F5',
+        '4-40': '#CCF5F566',
+        '5': '#7D8099',
+        '5-40': '#7D809966',
+        '6': '#6895F6',
+        '6-40': '#6895F666',
+        '7': '#97C7FF',
+        '7-40': '#97C7FF66',
+        '8': '#3664C6',
+        '8-40': '#3664C666',
+        '9': '#BFB0F3',
+        '9-40': '#BFB0F366',
+        '10': '#805CFF',
+        '10-40': '#805CFF66',
+        '11': '#B95CC9',
+        '11-40': '#B95CC966',
+        '12': '#E5659B',
+        '12-40': '#E5659B66',
+        '13': '#FF98C4',
+        '13-40': '#FF98C466',
+        '14': '#BE5925',
+        '14-40': '#BE592566',
+        '15': '#FFBC66',
+        '15-40': '#FFBC6666',
+        '16': '#FFF7D6',
+        '16-40': '#FFF7D666',
+        '17': '#AAAA96',
+        '17-40': '#AAAA9666',
+    })
+
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
 
@@ -237,6 +274,44 @@ class SiemensIXLightColors:
         '2': '#00002833',
         '3': '#0000281e',
     })
+    chart: Dict[str, str] = field(default_factory=lambda: {
+        '1': '#1a747d',
+        '1-40': '#1a747d66',
+        '2': '#005159',
+        '2-40': '#00515966',
+        '3': '#009999',
+        '3-40': '#00999966',
+        '4': '#002949',
+        '4-40': '#00294966',
+        '5': '#4c4c68',
+        '5-40': '#4c4c6866',
+        '6': '#3664c6',
+        '6-40': '#3664c666',
+        '7': '#00237a',
+        '7-40': '#00237a66',
+        '8': '#00004a',
+        '8-40': '#00004a66',
+        '9': '#553ba3',
+        '9-40': '#553ba366',
+        '10': '#7353e5',
+        '10-40': '#7353e566',
+        '11': '#740089',
+        '11-40': '#74008966',
+        '12': '#c04774',
+        '12-40': '#c0477466',
+        '13': '#4f153d',
+        '13-40': '#4f153d66',
+        '14': '#be5925',
+        '14-40': '#be592566',
+        '15': '#801100',
+        '15-40': '#80110066',
+        '16': '#805800',
+        '16-40': '#80580066',
+        '17': '#5e5e4a',
+        '17-40': '#5e5e4a66',
+    })
+   
+
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -262,7 +337,6 @@ def get_colors(mode: str = 'light') -> SiemensIXDarkColors | SiemensIXLightColor
 
 
 
-
 def get_continuous_cmap(dark_theme: bool = False) -> List[str]:
     """
     Get the continuous color map based on the dark theme flag.
@@ -282,7 +356,7 @@ def get_continuous_cmap(dark_theme: bool = False) -> List[str]:
     return DARK_CMAP if dark_theme else LIGHT_CMAP
 
 
-def get_categorical_palette(dark_theme: bool = False, n_colors: int = 20) -> List[str]:
+def get_categorical_palette(dark_theme: bool = False, n_colors: int = 17, opacity:bool=False) -> List[str]:
     """
     Get a categorical color palette based on the dark theme flag.
 
@@ -302,15 +376,16 @@ def get_categorical_palette(dark_theme: bool = False, n_colors: int = 20) -> Lis
         List of hex color codes suitable for categorical data
     """
     colors = get_colors("dark" if dark_theme else "light")
-    palette = [
-        colors.primary["main"],
-        colors.secondary["main"],
-        colors.success["main"],
-        colors.warning["main"],
-        colors.error["main"],
-    ]
+    palette_all = colors.chart
+    color_sequence = [3,2,8,1,6,4,10,9,11,14,13,12,7,15,16,17,5]
+    palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
+    palette = [palette_all[f"{k}"] for k in color_sequence]
     if n_colors <= len(palette):
+        if opacity:
+            return palette_40[:n_colors]
         return palette[:n_colors]
+    if n_colors <= len(palette_all):
+        return (palette + palette_40)[:n_colors]
     return pmui.theme.generate_palette(colors.primary["main"], n_colors=n_colors)
 
 __all__ = [
