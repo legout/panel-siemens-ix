@@ -83,8 +83,8 @@ def create_theme(mode: str = "light") -> Dict[str, Any]:
                 "styleOverrides": {
                     "root": {
                         "textTransform": "none",  # Siemens iX uses sentence case
-                        "borderRadius": "4px",
-                        "fontWeight": 500,
+                        "borderRadius": "2px",
+                        "fontWeight": 700,
                     },
                     "containedPrimary": {
                         "&:hover": {
@@ -118,7 +118,7 @@ def create_theme(mode: str = "light") -> Dict[str, Any]:
             "MuiChip": {
                 "styleOverrides": {
                     "root": {
-                        "borderRadius": "16px",
+                        "borderRadius": "4px",
                     },
                     "colorPrimary": {
                         "backgroundColor": colors.primary["main"],
@@ -179,45 +179,46 @@ def create_theme(mode: str = "light") -> Dict[str, Any]:
         "typography": {
             "fontFamily": '"Siemens Sans", "Arial", sans-serif',
             "h1": {
-                "fontWeight": 600,
-                "fontSize": "2.25rem",
+                "fontWeight": 700,
+                "fontSize": "1.8125rem",
                 "lineHeight": 1.2,
             },
             "h2": {
-                "fontWeight": 600,
-                "fontSize": "1.75rem",
-                "lineHeight": 1.3,
+                "fontWeight": 700,
+                "fontSize": "1.5rem",
+                "lineHeight": 1.43,
             },
             "h3": {
-                "fontWeight": 600,
-                "fontSize": "1.5rem",
-                "lineHeight": 1.4,
-            },
-            "h4": {
-                "fontWeight": 600,
+                "fontWeight": 700,
                 "fontSize": "1.25rem",
-                "lineHeight": 1.4,
-            },
-            "h5": {
-                "fontWeight": 600,
-                "fontSize": "1.125rem",
                 "lineHeight": 1.5,
             },
+            "h4": {
+                "fontWeight": 700,
+                "fontSize": "1.rem",
+                "lineHeight": 1.5,
+            },
+            "h5": {
+                "fontWeight": 700,
+                "fontSize": "0.875rem",
+                "lineHeight": 1.43,
+            },
             "h6": {
-                "fontWeight": 600,
-                "fontSize": "1.0rem",
+                "fontWeight": 700,
+                "fontSize": "0.75rem",
                 "lineHeight": 1.5,
             },
             "body1": {
-                "fontSize": "0.875rem",
-                "lineHeight": 1.5,
+                "fontWeight": 400,
+                "fontSize": "1rem",
+                "lineHeight": 1.50,
             },
             "body2": {
-                "fontSize": "0.75rem",
+                "fontSize": "0.875rem",
                 "lineHeight": 1.43,
             },
             "button": {
-                "fontWeight": 600,
+                "fontWeight": 700,
                 "textTransform": "none",
                 "fontSize": "1rem",
                 "lineHeight": 1.75,
@@ -228,7 +229,7 @@ def create_theme(mode: str = "light") -> Dict[str, Any]:
             },
         },
         "shape": {
-            "borderRadius": 4,
+            "borderRadius": 2,
         },
         "spacing": 8,  # 8px base spacing unit
         
