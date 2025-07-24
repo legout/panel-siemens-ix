@@ -49,6 +49,8 @@ For experienced developers wanting to push the boundaries:
 - **[reactive_components.py](advanced/reactive_components.py)** - Complex parameter-driven reactive design
 - **[integration_demo.py](advanced/integration_demo.py)** - Integration with external plots and visualizations
 - **[performance_tips.py](advanced/performance_tips.py)** - Optimized patterns, caching, and performance
+- **[time_series_dashboard.py](advanced/time_series_dashboard.py)** - Comprehensive data analytics dashboard with interactive time series visualizations
+- **[bi_dashboard.py](advanced/bi_dashboard.py)** - Business intelligence dashboard with data catalog, SQL editor, and visualization
 
 ### 📁 [utilities/](utilities/) - Helper Functions and Tools
 Working with colors, assets, and theme utilities:
