@@ -351,9 +351,12 @@ def get_continuous_cmap(dark_theme: bool = False) -> List[str]:
     List[str]
         List of hex color codes forming a continuous color map
     """
-    LIGHT_CMAP = pmui.theme.linear_gradient("#ffffff", get_colors('light').primary["main"], n=256)
-    DARK_CMAP = pmui.theme.linear_gradient("#222222", get_colors('dark').primary["main"], n=256)
-    return DARK_CMAP if dark_theme else LIGHT_CMAP
+    if dark_theme:
+        return pmui.theme.linear_gradient("#222222", get_colors('dark').primary["main"], n=256)
+    
+    
+    return pmui.theme.linear_gradient("#ffffff", get_colors('light').primary["main"], n=256)
+    
 
 
 def get_categorical_palette(dark_theme: bool = False, n_colors: int = 17, opacity:bool=False) -> List[str]:
@@ -376,16 +379,16 @@ def get_categorical_palette(dark_theme: bool = False, n_colors: int = 17, opacit
         List of hex color codes suitable for categorical data
     """
     colors = get_colors("dark" if dark_theme else "light")
-    palette_all = colors.chart
-    color_sequence = [3,2,8,1,6,4,10,9,11,14,13,12,7,15,16,17,5]
-    palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
-    palette = [palette_all[f"{k}"] for k in color_sequence]
-    if n_colors <= len(palette):
-        if opacity:
-            return palette_40[:n_colors]
-        return palette[:n_colors]
-    if n_colors <= len(palette_all):
-        return (palette + palette_40)[:n_colors]
+    #palette_all = colors.chart
+    #color_sequence = [3,2,8,1,6,4,10,9,11,14,13,12,7,15,16,17,5]
+    #palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
+    #palette = [palette_all[f"{k}"] for k in color_sequence]
+    #if n_colors <= len(palette):
+    #    if opacity:
+    #        return palette_40[:n_colors]
+    #    return palette[:n_colors]
+    #if n_colors <= len(palette_all):
+    #    return (palette + palette_40)[:n_colors]
     return pmui.theme.generate_palette(colors.primary["main"], n_colors=n_colors)
 
 __all__ = [
