@@ -351,11 +351,11 @@ def get_continuous_cmap(dark_theme: bool = False) -> List[str]:
     List[str]
         List of hex color codes forming a continuous color map
     """
-    if dark_theme:
-        return pmui.theme.linear_gradient("#222222", get_colors('dark').primary["main"], n=256)
-    
-    
-    return pmui.theme.linear_gradient("#ffffff", get_colors('light').primary["main"], n=256)
+    colors = get_colors('dark' if dark_theme else 'light')
+    #if dark_theme:
+    return pmui.theme.linear_gradient(colors.chart["4"], colors.primary["main"], n=256)
+
+    #return pmui.theme.linear_gradient("#ffffff", colors.primary["main"], n=256)
     
 
 
@@ -388,7 +388,7 @@ def get_categorical_palette(dark_theme: bool = False, n_colors: int = 17, primar
     color_sequence = [3,2,8,1,6,4,10,9,11,14,13,12,7,15,16,17,5]
     palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
     palette = [palette_all[f"{k}"] for k in color_sequence]
-    
+
     if n_colors <= len(palette):
        if opacity:
            return palette_40[::max(17//n_colors,1)]
