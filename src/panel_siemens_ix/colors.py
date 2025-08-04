@@ -450,8 +450,8 @@ def get_categorical_palette(
 
     if n_colors <= len(palette):
         if opacity:
-            return palette_40[:: max(17 // n_colors, 1)]
-        return palette[:: max(17 // n_colors, 1)]
+            return palette_40[:: max(17 // max(1,n_colors), 1)]
+        return palette[:: max(17 // max(1,n_colors), 1)]
 
     return pmui.theme.generate_palette(colors.primary["main"], n_colors=n_colors)
 
