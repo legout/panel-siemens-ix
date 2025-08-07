@@ -47,7 +47,7 @@ jobs:
       - name: Build package
         if: steps.version_check.outputs.publish == 'true'
         run: |
-          uv build --sdist --wheel --no-dev
+          uv build --sdist --wheel
 
       
 
