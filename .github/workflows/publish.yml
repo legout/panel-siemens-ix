@@ -3,9 +3,9 @@ name: Publish Python 🐍 package
 
 on:
   push:
+    branches: [main]
     paths:
       - 'pyproject.toml'
-  workflow_dispatch:
 
 
 jobs:
@@ -38,18 +38,18 @@ jobs:
         run: |
           pip install uv
 
-      - name: Install build
-        run: |
-          uv pip install build
+      
 
       - name: Install dependencies
         run: |
-          uv pip install -r requirements.txt || echo 'No requirements.txt, skipping.'
+          uv sync --no-dev
 
       - name: Build package
         if: steps.version_check.outputs.publish == 'true'
         run: |
-          uv build
+          uv build --sdist --wheel --no-dev
+
+      
 
       - name: Publish to PyPI
         if: steps.version_check.outputs.publish == 'true'
