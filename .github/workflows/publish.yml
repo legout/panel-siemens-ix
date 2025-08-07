@@ -1,0 +1,59 @@
+name: Publish Python 🐍 package
+
+
+on:
+  push:
+    paths:
+      - 'pyproject.toml'
+  workflow_dispatch:
+
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compare version with previous commit
+        id: version_check
+        run: |
+          set -e
+          CURRENT_VERSION=$(grep '^version' pyproject.toml | head -1 | cut -d '"' -f2)
+          PREV_VERSION=$(git show HEAD^:pyproject.toml | grep '^version' | head -1 | cut -d '"' -f2)
+          echo "Current version: $CURRENT_VERSION"
+          echo "Previous version: $PREV_VERSION"
+          if [ "$CURRENT_VERSION" = "$PREV_VERSION" ]; then
+            echo "publish=false" >> $GITHUB_OUTPUT
+          else
+            echo "publish=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: |
+          pip install uv
+
+      - name: Install build
+        run: |
+          uv pip install build
+
+      - name: Install dependencies
+        run: |
+          uv pip install -r requirements.txt || echo 'No requirements.txt, skipping.'
+
+      - name: Build package
+        if: steps.version_check.outputs.publish == 'true'
+        run: |
+          uv build
+
+      - name: Publish to PyPI
+        if: steps.version_check.outputs.publish == 'true'
+        env:
+          UV_PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          uv publish --token $UV_PYPI_TOKEN

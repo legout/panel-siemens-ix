@@ -1,6 +1,6 @@
 [project]
 name = "panel-siemens-ix"
-version = "0.2.2"
+version = "0.2.5"
 description = "Add your description here"
 readme = "README.md"
 authors = [
