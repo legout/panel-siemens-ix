@@ -1,16 +1,11 @@
 [project]
 name = "panel-siemens-ix"
-version = "0.2.7"
+version = "0.3.0"
 description = "Add your description here"
 readme = "README.md"
-authors = [
-    { name = "legout", email = "ligno.blades@gmail.com" }
-]
+authors = [{ name = "legout", email = "ligno.blades@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = [
-    "panel>=1.7.4",
-    "panel-material-ui>=0.3.3",
-]
+dependencies = ["panel>=1.7.4", "panel-material-ui>=0.3.3"]
 
 [project.optional-dependencies]
 examples = [
