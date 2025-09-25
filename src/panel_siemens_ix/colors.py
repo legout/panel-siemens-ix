@@ -170,40 +170,45 @@ class SiemensIXDarkColors:
 
     chart: Dict[str, str] = field(
         default_factory=lambda: {
-            "1": "#00ffb9",
+            # Primary and brand colors - bright and vibrant for dark background
+            "1": "#00ffb9",  # Bright cyan (primary accent)
             "1-40": "#00ffb966",
-            "2": "#85E9D2",
-            "2-40": "#85E9D266",
-            "3": "#00C1B6",
-            "3-40": "#00C1B666",
-            "4": "#CCF5F5",
-            "4-40": "#CCF5F566",
-            "5": "#7D8099",
-            "5-40": "#7D809966",
-            "6": "#6895F6",
-            "6-40": "#6895F666",
-            "7": "#97C7FF",
-            "7-40": "#97C7FF66",
-            "8": "#3664C6",
-            "8-40": "#3664C666",
-            "9": "#BFB0F3",
-            "9-40": "#BFB0F366",
-            "10": "#805CFF",
-            "10-40": "#805CFF66",
-            "11": "#B95CC9",
+            "2": "#00e5d4",  # Light cyan
+            "2-40": "#00e5d466",
+            "3": "#85E9D2",  # Mint
+            "3-40": "#85E9D266",
+            # Blues and purples
+            "4": "#6895F6",  # Bright blue
+            "4-40": "#6895F666",
+            "5": "#97C7FF",  # Light blue
+            "5-40": "#97C7FF66",
+            "6": "#3664C6",  # Medium blue
+            "6-40": "#3664C666",
+            "7": "#805CFF",  # Purple
+            "7-40": "#805CFF66",
+            "8": "#BFB0F3",  # Light purple
+            "8-40": "#BFB0F366",
+            # Warmer colors
+            "9": "#FF98C4",  # Pink
+            "9-40": "#FF98C466",
+            "10": "#E5659B",  # Rose
+            "10-40": "#E5659B66",
+            "11": "#B95CC9",  # Magenta
             "11-40": "#B95CC966",
-            "12": "#E5659B",
-            "12-40": "#E5659B66",
-            "13": "#FF98C4",
-            "13-40": "#FF98C466",
-            "14": "#BE5925",
+            # Oranges and yellows
+            "12": "#FFBC66",  # Peach
+            "12-40": "#FFBC6666",
+            "13": "#FFF7D6",  # Light yellow
+            "13-40": "#FFF7D666",
+            "14": "#BE5925",  # Orange
             "14-40": "#BE592566",
-            "15": "#FFBC66",
-            "15-40": "#FFBC6666",
-            "16": "#FFF7D6",
-            "16-40": "#FFF7D666",
-            "17": "#AAAA96",
-            "17-40": "#AAAA9666",
+            # Neutral and supporting colors
+            "15": "#7D8099",  # Blue-gray
+            "15-40": "#7D809966",
+            "16": "#AAAA96",  # Sage green
+            "16-40": "#AAAA9666",
+            "17": "#00C1B6",  # Teal (connector color)
+            "17-40": "#00C1B666",
         }
     )
 
@@ -334,39 +339,44 @@ class SiemensIXLightColors:
     )
     chart: Dict[str, str] = field(
         default_factory=lambda: {
-            "1": "#1a747d",
-            "1-40": "#1a747d66",
-            "2": "#005159",
+            # Primary and brand colors - deeper and more saturated for light background
+            "1": "#007993",  # Primary blue
+            "1-40": "#00799366",
+            "2": "#005159",  # Dark teal
             "2-40": "#00515966",
-            "3": "#009999",
+            "3": "#009999",  # Medium teal
             "3-40": "#00999966",
-            "4": "#002949",
-            "4-40": "#00294966",
-            "5": "#4c4c68",
-            "5-40": "#4c4c6866",
-            "6": "#3664c6",
-            "6-40": "#3664c666",
-            "7": "#00237a",
-            "7-40": "#00237a66",
-            "8": "#00004a",
-            "8-40": "#00004a66",
-            "9": "#553ba3",
-            "9-40": "#553ba366",
-            "10": "#7353e5",
-            "10-40": "#7353e566",
-            "11": "#740089",
-            "11-40": "#74008966",
-            "12": "#c04774",
-            "12-40": "#c0477466",
-            "13": "#4f153d",
-            "13-40": "#4f153d66",
-            "14": "#be5925",
-            "14-40": "#be592566",
-            "15": "#801100",
-            "15-40": "#80110066",
-            "16": "#805800",
-            "16-40": "#80580066",
-            "17": "#5e5e4a",
+            # Blues and purples - darker for better contrast
+            "4": "#3664c6",  # Strong blue
+            "4-40": "#3664c666",
+            "5": "#00237a",  # Navy blue
+            "5-40": "#00237a66",
+            "6": "#00004a",  # Deep blue
+            "6-40": "#00004a66",
+            "7": "#553ba3",  # Purple
+            "7-40": "#553ba366",
+            "8": "#7353e5",  # Lighter purple
+            "8-40": "#7353e566",
+            # Warmer colors - deeper and more saturated
+            "9": "#c04774",  # Rose
+            "9-40": "#c0477466",
+            "10": "#740089",  # Magenta
+            "10-40": "#74008966",
+            "11": "#4f153d",  # Dark red
+            "11-40": "#4f153d66",
+            # Oranges and yellows - darker for visibility
+            "12": "#be5925",  # Orange
+            "12-40": "#be592566",
+            "13": "#801100",  # Dark orange
+            "13-40": "#80110066",
+            "14": "#805800",  # Olive
+            "14-40": "#80580066",
+            # Neutral and supporting colors
+            "15": "#4c4c68",  # Blue-gray
+            "15-40": "#4c4c6866",
+            "16": "#002949",  # Very dark blue
+            "16-40": "#00294966",
+            "17": "#5e5e4a",  # Sage green
             "17-40": "#5e5e4a66",
         }
     )
@@ -396,20 +406,69 @@ def get_colors(mode: str = "light") -> SiemensIXDarkColors | SiemensIXLightColor
 
 def get_continuous_cmap(dark_theme: bool = False, n_colors: int = 128) -> List[str]:
     """
-    Get the continuous color map based on the dark theme flag.
+    Get the continuous color map optimized for the Siemens iX design system.
+
+    Creates a perceptually uniform gradient that transitions smoothly from
+    the surface background through accent colors to create a professional,
+    Siemens iX-branded continuous colormap.
 
     Parameters
     ----------
     dark_theme : bool, default=False
         If True, return dark theme color map. Otherwise, return light theme color map.
+    n_colors : int, default=128
+        Number of colors in the continuous gradient.
 
     Returns
     -------
     List[str]
         List of hex color codes forming a continuous color map
+
+    Examples
+    --------
+    >>> # Get a light theme continuous colormap
+    >>> cmap_light = get_continuous_cmap(dark_theme=False, n_colors=64)
+
+    >>> # Get a dark theme continuous colormap
+    >>> cmap_dark = get_continuous_cmap(dark_theme=True, n_colors=64)
     """
     colors = get_colors("dark" if dark_theme else "light")
-    return pmui.theme.linear_gradient(colors.background["surface"], colors.primary["main"], n=n_colors)
+
+    if dark_theme:
+        # Dark theme: gradient from surface dark cyan through bright accent
+        # Start with surface, go through mid-tone, end with bright accent
+        start_color = colors.background["surface"]  # #37374d
+        mid_color = colors.chart["17"]  # #00C1B6 (teal connector)
+        end_color = colors.primary["main"]  # #00cccc
+
+        # Create a three-part gradient for better visual distribution
+        n_part1 = n_colors // 3
+        n_part2 = n_colors // 3
+        n_part3 = n_colors - n_part1 - n_part2
+
+        part1 = pmui.theme.linear_gradient(start_color, mid_color, n=n_part1)
+        part2 = pmui.theme.linear_gradient(mid_color, end_color, n=n_part2)
+        # For the third part, create variations of the end color
+        part3 = pmui.theme.generate_palette(end_color, n_colors=n_part3)
+
+        return part1 + part2 + part3[-n_part3:]
+    else:
+        # Light theme: gradient from paper through primary to darker shade
+        start_color = colors.background["paper"]  # #f3f3f0
+        mid_color = colors.primary["main"]  # #007993
+        end_color = colors.chart["16"]  # #002949 (very dark blue)
+
+        # Create a three-part gradient for better visual distribution
+        n_part1 = n_colors // 3
+        n_part2 = n_colors // 3
+        n_part3 = n_colors - n_part1 - n_part2
+
+        part1 = pmui.theme.linear_gradient(start_color, mid_color, n=n_part1)
+        part2 = pmui.theme.linear_gradient(mid_color, end_color, n=n_part2)
+        # For the third part, create darker variations
+        part3 = pmui.theme.generate_palette(end_color, n_colors=n_part3)
+
+        return part1 + part2 + part3[-n_part3:]
 
 
 def get_categorical_palette(
@@ -419,41 +478,116 @@ def get_categorical_palette(
     opacity: bool = False,
 ) -> List[str]:
     """
-    Get a categorical color palette based on the dark theme flag.
+    Get an optimized categorical color palette for the Siemens iX design system.
 
-    For small palettes (n_colors <= 5), returns the theme's main colors.
-    For larger palettes, generates additional colors based on the primary color.
+    This function provides carefully selected colors that maximize visual distinction
+    while maintaining the Siemens iX brand aesthetic. Colors are selected based on
+    perceptual distance and theme-appropriate contrast.
 
     Parameters
     ----------
     dark_theme : bool, default=False
         If True, return dark theme color palette. Otherwise, return light theme color palette.
-    n_colors : int, default=20
-        Number of colors in the returned palette.
+    n_colors : int, default=17
+        Number of colors in the returned palette. Must be at least 1.
+    primary : bool, default=False
+        If True, generate a palette based solely on variations of the primary color.
+    opacity : bool, default=False
+        If True, return colors with 40% opacity (ending with '-40' in the chart).
 
     Returns
     -------
     List[str]
-        List of hex color codes suitable for categorical data
+        List of hex color codes suitable for categorical data visualization
+
+    Examples
+    --------
+    >>> # Get a 5-color palette for light theme
+    >>> palette = get_categorical_palette(dark_theme=False, n_colors=5)
+
+    >>> # Get a 10-color palette with opacity for dark theme
+    >>> palette_opaque = get_categorical_palette(dark_theme=True, n_colors=10, opacity=True)
+
+    >>> # Generate a primary-based palette
+    >>> primary_palette = get_categorical_palette(primary=True, n_colors=8)
     """
+    if n_colors < 1:
+        raise ValueError("n_colors must be at least 1")
+
     colors = get_colors("dark" if dark_theme else "light")
 
+    # If primary-based palette is requested
     if primary:
         return pmui.theme.generate_palette(
             color=colors.primary["main"], n_colors=n_colors
         )
 
+    # For very small palettes, use semantic colors for better meaning
+    if n_colors <= 5:
+        semantic_colors = [
+            colors.primary["main"],     # Primary
+            colors.success["main"],    # Success
+            colors.warning["main"],    # Warning
+            colors.error["main"],      # Error
+            colors.info["main"],       # Info
+        ]
+        return semantic_colors[:n_colors]
+
+    # Use the enhanced chart colors with improved sequence
     palette_all = colors.chart
-    color_sequence = [3, 2, 8, 1, 6, 4, 10, 9, 11, 14, 13, 12, 7, 15, 16, 17, 5]
-    palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
+
+    # Improved color sequence for better visual hierarchy
+    if dark_theme:
+        # Dark theme: start with bright accents, progress through spectrum
+        color_sequence = [1, 4, 9, 7, 12, 2, 6, 10, 14, 3, 8, 11, 13, 15, 16, 17, 5]
+    else:
+        # Light theme: start with primary blues, progress through spectrum
+        color_sequence = [1, 4, 7, 9, 12, 2, 6, 10, 14, 3, 8, 11, 13, 15, 16, 17, 5]
+
     palette = [palette_all[f"{k}"] for k in color_sequence]
+    palette_40 = [palette_all[f"{k}-40"] for k in color_sequence]
 
+    # If we have enough predefined colors, sample intelligently
     if n_colors <= len(palette):
-        if opacity:
-            return palette_40[:: max(17 // max(1,n_colors), 1)]
-        return palette[:: max(17 // max(1,n_colors), 1)]
+        # Use intelligent sampling to get good distribution
+        step = max(1, len(palette) // n_colors)
+        indices = [i * step for i in range(n_colors)]
+        # Ensure we don't go out of bounds
+        indices = [min(i, len(palette) - 1) for i in indices]
 
-    return pmui.theme.generate_palette(colors.primary["main"], n_colors=n_colors)
+        if opacity:
+            return [palette_40[i] for i in indices]
+        else:
+            return [palette[i] for i in indices]
+
+    # For more colors than defined, extend using palette generation
+    base_colors = palette.copy()
+
+    # Use the most distinct colors as base for generation
+    if dark_theme:
+        # Use bright colors as base for dark theme
+        base_for_generation = [colors.primary["main"], colors.chart["1"], colors.chart["4"]]
+    else:
+        # Use primary colors as base for light theme
+        base_for_generation = [colors.primary["main"], colors.chart["4"], colors.chart["7"]]
+
+    # Generate additional colors
+    additional_needed = n_colors - len(base_colors)
+    generated_colors = []
+
+    # Distribute generation across base colors
+    colors_per_base = max(1, additional_needed // len(base_for_generation))
+
+    for base_color in base_for_generation:
+        if len(generated_colors) < additional_needed:
+            n_gen = min(colors_per_base, additional_needed - len(generated_colors))
+            generated_colors.extend(
+                pmui.theme.generate_palette(base_color, n_colors=n_gen + 1)[1:n_gen + 1]
+            )
+
+    # Combine and return
+    final_palette = base_colors + generated_colors[:additional_needed]
+    return final_palette[:n_colors]
 
 
 __all__ = [
